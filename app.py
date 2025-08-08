@@ -1,15 +1,32 @@
+import os
+from dotenv import load_dotenv
+load_dotenv()
+
 import streamlit as st
 from langchain.prompts import PromptTemplate
-from langchain_community.llms import Ollama
+from langchain_ollama import ChatOllama
 
+from langchain_huggingface import ChatHuggingFace, HuggingFaceEndpoint
 
+llm = HuggingFaceEndpoint(
+    repo_id="deepseek-ai/DeepSeek-R1-0528",
+    task="text-generation",
+    max_new_tokens=512,
+    do_sample=False,
+    repetition_penalty=1.03,
+    provider="auto",  # let Hugging Face choose the best provider for you
+)
+
+chat_model = ChatHuggingFace(llm=llm)
+
+os.environ["HUGGINGFACEHUB_API_TOKEN"] =""
 
 ## Function To get response from LLAma 2 model
 
-def getLLamaresponse(input_text,no_words,blog_style):
+def getResponse(input_text,no_words,blog_style):
 
     ### LLama2 model
-    llm=Ollama(model='gemma:2b')
+    llm=ChatOllama(model='qwen2.5vl:3b')
     
     ## Prompt Template
 
@@ -54,4 +71,4 @@ submit=st.button("Generate")
 
 ## Final response
 if submit:
-    st.write(getLLamaresponse(input_text,no_words,blog_style))
+    st.write(getResponse(input_text,no_words,blog_style))

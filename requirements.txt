@@ -1,6 +1,8 @@
 gradio
-streamlit
 langchain
 langchain_community
 langchain_groq
 langchain_core
+langchain_ollama
+faiss-cpu
+pypdf
