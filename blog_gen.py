@@ -254,7 +254,7 @@ the context and other information provided by the user.
 with gr.Blocks(theme=gr.themes.Soft(primary_hue="blue"), css="footer {visibility: hidden}") as demo:
     gr.Markdown(
         """
-        # MixtraBlog AI: Fast Content Generation Tool
+        # Mixtra-AI: Fast Content Generation Tool
         
         This app can generate high-quality content on any topic in your chosen format and length. 
         Upload a PDF document (optional) to make the content more relevant and context-aware.
