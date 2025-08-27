@@ -1,4 +1,4 @@
-# MixtraBlog-AI: Fast Content Generation Tool
+# Mixtra-AI: Fast Content Generation Tool
 
 This project creates an AI-powered content generation app with fast text generation capabilities. It allows users to generate blogs, articles, essays, and more on any topic with context-aware content generation.
 
